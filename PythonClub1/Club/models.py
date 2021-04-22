@@ -8,15 +8,16 @@ from django.contrib.auth.models import User
 # Create your models here.
 #2. first class 4-8-2021 
 class Meeting(models.Model): 
-    MeetingTitle = models.CharField(max_length=255), 
+    MeetingTitle = models.CharField(max_length=255) 
     MeetingDate = models.DateField() 
     MeetingTime = models.TimeField() 
     MeetingLocation = models.TextField()
     Agenda = models.TextField(null=True, blank=True) #means that we can leave blank 
+    
 
     #3. two string method and created the class Meta 4-8-2021
     def __str__(self): 
-        return self.meetingTitle
+        return self.MeetingTitle
 
     class Meta: 
         db_table='Meeting' #tells what table name to use 

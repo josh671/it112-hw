@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<h2>Meeting Details</h2>
+{% for meeting in meeting %}
+<p>Meeting Title: {{meeting.MeetingTitle}}</p><br>
+<p>Meeting Title: {{meeting.MeetingDate}}</p><br>
+<p>Meeting Title: {{meeting.MeetingTime}}</p><br>
+<p>Meeting Title: {{meeting.MeetingLocation}}</p><br>
+<p>Meeting Title: {{meeting.Agenda}}</p><br>
+
+{% endfor %}
+
+{% endblock %}
