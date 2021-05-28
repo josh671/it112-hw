@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Meetings</h2>
+<ul>
+    {% for m in meeting_list %} 
+    <!-- 6. create for loop with meeting_list from meetings views function and echo the url with meetingDetail (name we gave in urls for meetingDetail ) -->
+    <li><a href="{% url 'meetingDetail' id=m.id %}">{{m.MeetingTitle}} </a></li>
+    {% endfor %}
+</ul>
+{% endblock%}

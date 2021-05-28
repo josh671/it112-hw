@@ -9,10 +9,10 @@ urlpatterns = [
     path('resource/', views.resource, name='resource'), 
     #5 go create resource.html
 
-    path('meeting/', views.meeting, name='meeting'),
+    path('meetings/', views.meetings, name='meetings'),
 
-    #3. go and set paths 4-19-2021 
+    #4. go and set paths 4-19-2021 
     #passing integer that is id, we are getting id from views 
-    path('meetingDetail/<int:id>', views.meetingDetail, name='detail'),
-    #go club and make product detail.html 4-19-2021
+    path('meetingDetail/<int:id>', views.meetingDetail, name='meetingDetail'),
+    #5. go club and make productdetail.html 4-19-2021
 ]
