@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %} 
 
-<h2>Meeting Details</h2>
-{% for meeting in meeting %}
-<p>Meeting Title: {{meeting.MeetingTitle}}</p><br>
-<p>Meeting Title: {{meeting.MeetingDate}}</p><br>
-<p>Meeting Title: {{meeting.MeetingTime}}</p><br>
-<p>Meeting Title: {{meeting.MeetingLocation}}</p><br>
-<p>Meeting Title: {{meeting.Agenda}}</p><br>
+<!--#5.  create the links to database so data can render 4-19-2021-->
+<h2>{{meetingDetail.MeetingTitle}}</h2>
+<p>Meeting Date: {{meetingDetail.MeetingDate}}</p>
+<p>Meeting Time: {{meetingDetail.MeetingTitle}}</p>
+<p>Meeting Location: {{meetingDetail.MeetingLocation}}</p>
+<p>Meeting Agenda: {{meetingDetail.Agenda}}</p>
+<h2>{{meetingDetail.meetingTitle}}</h2>
 
-{% endfor %}
 
-{% endblock %}
+
+
+{% endblock %} 
+
+<!-- #6. go and make meetings.php page so that we can link to this page 4-19-2021 -->

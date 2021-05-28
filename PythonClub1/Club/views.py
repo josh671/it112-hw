@@ -16,16 +16,17 @@ def resource(request):
     return render(request, 'Club/resource.html', {'resource_list': resource_list}) #render result on resources.html 
 #4. add URL to urls.py 4-13-2021 
 
-def meeting(request): 
-    meetings=Meeting.objects.all() 
-    return (render(request, 'Club/meeting.html', {'meeting': meeting}))
+def meetings(request): 
+    meeting_list=Meeting.objects.all() 
+    return render(request, 'Club/meetings.html', {'meeting_list': meeting_list})
 
 
 #**Asignment 6 start 4-19-2021
 #add views for assignment 6 
 def meetingDetail(request, id): 
     #1. assign meeting get object 4-19-2021
-    meeting=get_object_or_404(Meeting, pk=id) #assing meeting the primary key id's from Meeting table 
+    meetingDetail=get_object_or_404(Meeting, pk=id) #assing meeting the primary key id's from Meeting table 
     #2. return the render statment for meetingdetail.html
-    return render(request, 'Club/meetingDetail.html', {'meeting': meeting})
-    #3. go and set paths 4-19-2021
+    return render(request, 'Club/meetingDetail.html', {'meetingDetail': meetingDetail})
+    #3. ADD inport for get_object_or_404(Meeting, pk=id) after render
+    #4. go and set paths in url 4-19-2021
