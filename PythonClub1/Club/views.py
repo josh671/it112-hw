@@ -1,8 +1,10 @@
+
 from django.shortcuts import render, get_object_or_404
 #1.  inpoorting Product from .models 4-13-2021 
 from .models import Meeting, MeetingMinutes, Resources, Event
 from django.urls import reverse_lazy
-
+#adding form stuff 5-31-2021
+from .forms import MeetingForm, ResourceForm, Resources
 # Create your views here.
 #1. created the first view, a index.html file 4-7-2021 ~urls.py in Club app 
 def index(request): 
@@ -29,4 +31,29 @@ def meetingDetail(request, id):
     #2. return the render statment for meetingdetail.html
     return render(request, 'Club/meetingDetail.html', {'meetingDetail': meetingDetail})
     #3. ADD inport for get_object_or_404(Meeting, pk=id) after render
-    #4. go and set paths in url 4-19-2021
+    #4. go and set paths in url 4-19-2021 
+
+def newMeeting(request): 
+    form=MeetingForm 
+    if request.method =='POST': 
+        form=MeetingForm(request.POST)
+        if form.is_valid(): 
+            post=form.save(commit=True)
+            post.save() 
+            form=MeetingForm() 
+    else: 
+        form=MeetingForm 
+    return render(request, 'Club/newmeeting.html', {'form': form}) 
+
+
+def newResource(request): 
+    form=ResourceForm 
+    if request.method =='POST': 
+        form=ResourceForm (request.POST)
+        if form.is_valid(): 
+            post=form.save(commit=True)
+            post.save() 
+            form=ResourceForm () 
+    else: 
+        form=ResourceForm  
+    return render(request, 'Club/newmeeting.html', {'form': form}) 
