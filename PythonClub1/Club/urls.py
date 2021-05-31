@@ -15,4 +15,9 @@ urlpatterns = [
     #passing integer that is id, we are getting id from views 
     path('meetingDetail/<int:id>', views.meetingDetail, name='meetingDetail'),
     #5. go club and make productdetail.html 4-19-2021
+
+    #adding path for form 
+    path('newmeeting/', views.newMeeting, name='newmeeting'),
+    #adding form for resources
+    path('newresource/', views.newResource, name='newresource')
 ]
