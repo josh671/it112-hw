@@ -95,6 +95,4 @@ class New_Resource_Authentication_Test(TestCase):
         response=self.client.get(reverse('newresource'))
         self.assertRedirects(response, '/accounts/login/?next=/Club/newresource/') 
 
-    def test_redirect_if_logged_in(self): 
-        response=self.client.get('newresource')
-        self.assertRedirects(response, '/accounts/login/?next=/Club/newresource/')
+  
