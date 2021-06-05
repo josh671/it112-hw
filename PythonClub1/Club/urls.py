@@ -19,5 +19,9 @@ urlpatterns = [
     #adding path for form 
     path('newmeeting/', views.newMeeting, name='newmeeting'),
     #adding form for resources
-    path('newresource/', views.newResource, name='newresource')
+    path('newresource/', views.newResource, name='newresource'), 
+
+    #adding login/out
+    path('loginmessage', views.loginmessage, name='loginmessage'),
+    path('logoutmessage', views.logoutmessage, name='logoutmessage'),
 ]

@@ -5,6 +5,9 @@ from .models import Meeting, MeetingMinutes, Resources, Event
 from django.urls import reverse_lazy
 #adding form stuff 5-31-2021
 from .forms import MeetingForm, ResourceForm, Resources
+
+#adding login stuffs 
+from django.contrib.auth.decorators import login_required 
 # Create your views here.
 #1. created the first view, a index.html file 4-7-2021 ~urls.py in Club app 
 def index(request): 
@@ -45,7 +48,7 @@ def newMeeting(request):
         form=MeetingForm 
     return render(request, 'Club/newmeeting.html', {'form': form}) 
 
-
+@login_required
 def newResource(request): 
     form=ResourceForm 
     if request.method =='POST': 
@@ -57,3 +60,10 @@ def newResource(request):
     else: 
         form=ResourceForm  
     return render(request, 'Club/newmeeting.html', {'form': form}) 
+
+#start of login/out
+def loginmessage(request): 
+    return render(request, 'Club/loginmessage.html')
+
+def logoutmessage(request): 
+    return render(request, 'Club/logoutmessage.html')
